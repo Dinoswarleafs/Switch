@@ -1,21 +1,21 @@
 Ball tBall;
-PlatformCreator testPC;
+PlatformManager pManager;
 
 void setup() {
   size(360, 640);
   tBall = new Ball();
-  testPC = new PlatformCreator();
+  pManager = new PlatformManager();
 }
 
 void draw() {
   background(0);
   tBall.move();
   tBall.display();
-  testPC.move();
-  testPC.display();
+  pManager.genManager();
+  pManager.move();
+  pManager.display();
 }
 
 void keyPressed() {
-  if (key != 'f') tBall.changeDirection();
-  else testPC.createPlat();
+  tBall.changeDirection();
 }

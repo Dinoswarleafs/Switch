@@ -15,11 +15,14 @@ static class Default {
  static float platSizeY = -1000;
  static color platColor = 128;
  
+ // Plat Creator Variables
+ static float pcThreshold = .05;
+ static float pcThreshGain = .00005;
+ static float pcColor = 128;
+ static float pcLengths = 100;
+ 
  // Plat Manager Variables
- static float pmThreshold = .05;
- static float pmThreshGain = .00005;
- static float pmColor = 128;
- static float pmLengths = 100;
+ static float pmSpeed = 20;
  
   
 }

@@ -7,10 +7,10 @@ class PlatformCreator {
   color pColor;
   
   PlatformCreator() {
-   threshold = Default.pmThreshold;
-   threshGain = Default.pmThreshGain;
-   platLengths = Default.pmLengths;
-   pColor = color(Default.pmColor);   
+   threshold = Default.pcThreshold;
+   threshGain = Default.pcThreshGain;
+   platLengths = Default.pcLengths;
+   pColor = color(Default.pcColor);   
   }
   
   float createLength() {
@@ -31,9 +31,13 @@ class PlatformCreator {
     threshold += threshGain;
   }
   
-  void move() {
+  void createGap() {
+   platforms.add(new Platform(createLength()));
+  }
+  
+  void move(float speed_) {
    for (Platform platforms : platforms)
-    platforms.move(20);
+    platforms.move(speed_);
   }
   
   void display() {

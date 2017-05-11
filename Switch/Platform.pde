@@ -29,5 +29,9 @@ class Platform {
  void setColor(color pColor_) {
   pColor = color(pColor_); 
  }
+ 
+ float topEdge() {
+  return location.y + size.y; 
+ }
   
 }
