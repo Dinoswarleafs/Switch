@@ -5,15 +5,31 @@ class Platform {
  color pColor;
  
  Platform(float sizeY_) {
-  location = new PVector(Default.platLocX, Default.platLocY); 
-  size     = new PVector(Default.platSizeX, sizeY_ * -1);
-  pColor   = color(Default.platColor);  
+    location = new PVector(Default.platLocX, Default.platLocY); 
+    size     = new PVector(Default.platSizeX, sizeY_ * -1);
+    pColor   = color(Default.platColor);  
  }
  
  Platform(float locationY_, float sizeY_) {
-  location = new PVector(Default.platLocX, locationY_); 
-  size     = new PVector(Default.platSizeX * -1, sizeY_ * -1);
-  pColor   = color(Default.platColor);   
+    location = new PVector(Default.platLocX, locationY_); 
+    size     = new PVector(Default.platSizeX, sizeY_ * -1);
+    pColor   = color(Default.platColor);   
+  }
+ 
+ Platform(float sizeY_, boolean isLeft_) {
+   if (!isLeft_) { 
+    location = new PVector(Default.platLocX, Default.platLocY); 
+    size     = new PVector(Default.platSizeX, sizeY_ * -1);
+    pColor   = color(Default.platColor);  
+   }
+ }
+ 
+ Platform(float locationY_, float sizeY_, boolean isLeft_) {
+   if (!isLeft_) {
+    location = new PVector(Default.platLocX, locationY_); 
+    size     = new PVector(Default.platSizeX, sizeY_ * -1);
+    pColor   = color(Default.platColor);   
+   }
  }
  
  void display() {

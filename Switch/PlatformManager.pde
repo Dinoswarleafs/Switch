@@ -3,13 +3,16 @@ class PlatformManager {
   PlatformCreator gCreator;
   float speed;
   boolean isEmpty;
+  boolean isLeft;
+
   
   PlatformManager() {
     pCreator = new PlatformCreator();
     gCreator = new PlatformCreator();
-    gCreator.setColor(255);
+    gCreator.setGap(true);
     speed = Default.pmSpeed; 
     isEmpty = true;
+    isLeft = true;
   }
   
   void genManager() {
@@ -17,12 +20,12 @@ class PlatformManager {
    pCreator.removePlat();
    gCreator.removePlat();
    if (gCreator.getLastYPos(gCreator.platforms.size() - 1) > 0)
-    isEmpty = true;
+    isEmpty = true; 
   }
   
   void display() {
    pCreator.display(); 
-   gCreator.display();
+   //gCreator.display();
   }
   
   void move() {
@@ -41,4 +44,17 @@ class PlatformManager {
   void setSpeed(float speed_) {
    speed =  speed_;
   }
+  
+  void setLeft(boolean value) {
+   isLeft = value; 
+    if (!isLeft) {
+     pCreator.setLeft(false);
+     gCreator.setLeft(false);
+    }
+  }
+  
+  void setColor(int color_) {
+   pCreator.setColor(color_); 
+  }
+   
 }

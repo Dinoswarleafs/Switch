@@ -1,21 +1,18 @@
-Ball tBall;
-PlatformManager pManager;
+GameManager gm;
 
 void setup() {
   size(360, 640);
-  tBall = new Ball();
-  pManager = new PlatformManager();
+  gm = new GameManager();
 }
 
 void draw() {
   background(0);
-  tBall.move();
-  tBall.display();
-  pManager.genManager();
-  pManager.move();
-  pManager.display();
+  gm.genManager();
+  gm.move();
+  gm.display();
+  
 }
 
 void keyPressed() {
-  tBall.changeDirection();
+  gm.ball.changeDirection();
 }
