@@ -17,12 +17,11 @@ static class Default {
  
  // Plat Creator Variables
  static float pcThreshold = .05;
- static float pcThreshGain = .00005;
+ static float pcThreshGain = .0005;
  static float pcColor = 128;
  static float pcLengths = 100;
  
  // Plat Manager Variables
  static float pmSpeed = 20;
  
-  
 }

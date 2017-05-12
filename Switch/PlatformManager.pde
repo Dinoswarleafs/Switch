@@ -7,22 +7,22 @@ class PlatformManager {
   PlatformManager() {
     pCreator = new PlatformCreator();
     gCreator = new PlatformCreator();
+    gCreator.setColor(255);
     speed = Default.pmSpeed; 
     isEmpty = true;
   }
   
   void genManager() {
    generatePlat();
-   generateGap();
-   for (int i = 0; i < pCreator.platforms.size(); i++)
-    if (pCreator.platforms.get(i).topEdge() > height)
-     pCreator.platforms.remove(i);  
-   if (gCreator.platforms.get(0).topEdge() == 0)
+   pCreator.removePlat();
+   gCreator.removePlat();
+   if (gCreator.getLastYPos(gCreator.platforms.size() - 1) > 0)
     isEmpty = true;
   }
   
   void display() {
    pCreator.display(); 
+   gCreator.display();
   }
   
   void move() {
@@ -32,25 +32,13 @@ class PlatformManager {
   
   void generatePlat() {
    if (isEmpty) {
-     gCreator.createPlat();
+     pCreator.createPlat();
+     gCreator.createPlat(pCreator.getLastYPos(pCreator.platforms.size() - 1));
      isEmpty = false;
    }
-  }
-  
-  void generateGap() {
-   if (isEndOnScreen())
-    pCreator.createGap();
-  }
-  
-  boolean isEndOnScreen() {
-     if (pCreator.platforms.get(0).topEdge() >= 0)
-     return true;
-    return false; 
   }
   
   void setSpeed(float speed_) {
    speed =  speed_;
   }
-  
-  
 }
