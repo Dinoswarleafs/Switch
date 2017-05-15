@@ -33,23 +33,24 @@ class PlatformCreator {
     else
      platHeight += platLengths;
      randomNum = random(1);
-     println(platforms.size());
    }    
    return platHeight;
   }
   
   void createPlat() {
-    platforms.add(new Platform(createLength()));
-    if (!isLeft)
-    platforms.add(new Platform(createLength(), false));
+    if (isLeft)
+     platforms.add(new Platform(createLength()));
+    else 
+     platforms.add(new Platform(createLength(), false));
     if (threshold < .75)
     threshold += threshGain;
   }
   
-    void createPlat(float yPos_) {
-    platforms.add(new Platform(yPos_, createLength()));
-    if (!isLeft)
-    platforms.add(new Platform(yPos_, createLength(), false));
+   void createPlat(float yPos_) {
+    if (isLeft)
+      platforms.add(new Platform(yPos_, createLength()));
+    else 
+      platforms.add(new Platform(yPos_, createLength(), false));
     if (threshold < .75)
     threshold += threshGain;
   }

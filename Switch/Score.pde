@@ -32,6 +32,10 @@ class Score {
     highScore = score;
   }
   
+  void setScore(int score_) {
+    score = score_;
+  }
+  
   void restart() {
    score = 0; 
   }

@@ -14,5 +14,7 @@ void draw() {
 }
 
 void keyPressed() {
-  gm.ball.changeDirection();
+  if (key != 'g')
+   gm.ball.changeDirection();
+  else gm.gameOver = false;
 }

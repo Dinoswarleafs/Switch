@@ -3,6 +3,7 @@ class Ball {
  PVector size;
  color bColor;
  char direction;
+ float speed;
  
  Ball() {
   location = new PVector(Default.ballLocX, height - Default.ballLocY);
@@ -31,6 +32,10 @@ class Ball {
   else if (location.x == width - Default.ballLocX && direction == '_')
    direction = 'l';
  } 
+ 
+ void setSpeed(float speed_) {
+  speed = speed_; 
+ }
  
  float getLeftEdge() {
   return location.x - size.x / 2; 
